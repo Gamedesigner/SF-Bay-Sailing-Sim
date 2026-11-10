@@ -4,7 +4,9 @@ An interactive 3D sailing simulator for San Francisco Bay, built with Three.js. 
 
 ## Play
 
-**Easiest (Windows, Mac, Linux):** download [`release/Windward.html`](release/Windward.html) and double-click it. It is one self-contained file and opens in Chrome, Edge or Firefox. A computer with a reasonable graphics card is recommended.
+**In your browser:** https://gamedesigner.github.io/SF-Bay-Sailing-Sim/
+
+**Offline (Windows, Mac, Linux):** download [`release/Windward.html`](release/Windward.html) and double-click it. It is one self-contained file and opens in Chrome, Edge or Firefox. A computer with a reasonable graphics card is recommended.
 
 **From source:**
 
