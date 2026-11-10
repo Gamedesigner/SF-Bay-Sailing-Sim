@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Windward — San Francisco Bay Sailing</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <canvas id="scene"></canvas>
+
+    <div id="hud" class="hidden">
+      <div id="brand">
+        <div class="mark">WINDWARD</div>
+        <div class="sub">San Francisco Bay</div>
+      </div>
+
+      <section id="instruments" class="glass">
+        <canvas id="dial" width="380" height="380"></canvas>
+        <div class="readouts">
+          <div class="speed"><span id="v-spd">0.0</span><small>kt</small></div>
+          <div class="grid">
+            <div><label>SOG</label><b id="v-sog">0.0</b></div>
+            <div><label>HDG</label><b id="v-hdg">000°</b></div>
+            <div><label>TWS</label><b id="v-tws">0</b></div>
+            <div><label>TWA</label><b id="v-twa">0°</b></div>
+            <div><label>AWS</label><b id="v-aws">0</b></div>
+            <div><label>AWA</label><b id="v-awa">0°</b></div>
+            <div><label>HEEL</label><b id="v-heel">0°</b></div>
+            <div><label>DEPTH</label><b id="v-depth">0 m</b></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="helm" class="glass">
+        <div class="bar"><label>RUDDER</label><div class="track"><i id="rudder-knob"></i></div></div>
+        <div class="bar"><label>SHEET</label><div class="track"><i id="sheet-fill"></i><em id="sheet-opt"></em></div></div>
+        <div class="status"><span id="trim-mode">AUTO TRIM</span><span id="point">—</span></div>
+      </section>
+
+      <aside id="panel" class="glass"></aside>
+      <canvas id="minimap" width="440" height="440"></canvas>
+      <div id="toast"></div>
+      <div id="keys">A/D steer · W/S sheet · T auto-trim · C camera · R reset · H hide · drag to look · scroll to zoom</div>
+    </div>
+
+    <div id="intro">
+      <div class="card">
+        <div class="mark">WINDWARD</div>
+        <h2>San Francisco Bay Sailing Simulator</h2>
+        <p id="load-msg">Charting the Bay…</p>
+        <div class="progress"><i id="load-bar"></i></div>
+        <ul>
+          <li><kbd>A</kbd><kbd>D</kbd> or <kbd>←</kbd><kbd>→</kbd> steer</li>
+          <li><kbd>W</kbd><kbd>S</kbd> sheet in / ease (auto-trim is on by default)</li>
+          <li><kbd>C</kbd> camera · <kbd>T</kbd> auto-trim · <kbd>R</kbd> reset · <kbd>H</kbd> hide panels</li>
+          <li>Drag to look around, scroll to zoom</li>
+        </ul>
+        <button id="start" disabled>Cast off</button>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

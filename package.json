@@ -1,0 +1,19 @@
+{
+  "name": "windward-sf-bay-sailing",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5173",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build:portable": "vite build --base=./ && node scripts/singlefile.mjs",
+    "dev:lan": "vite --host --port 5173"
+  },
+  "dependencies": {
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.7"
+  }
+}
