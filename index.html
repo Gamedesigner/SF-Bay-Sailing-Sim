@@ -41,7 +41,23 @@
       <aside id="panel" class="glass"></aside>
       <canvas id="minimap" width="440" height="440"></canvas>
       <div id="toast"></div>
-      <div id="keys">A/D steer · W/S sheet · T auto-trim · C camera · R reset · H hide · drag to look · scroll to zoom</div>
+      <section id="controls" class="glass">
+        <header><span>Controls</span><button id="controls-hide" title="Hide controls (K)" aria-label="Hide controls">×</button></header>
+        <dl>
+          <dt><kbd>A</kbd><kbd>D</kbd> <kbd>←</kbd><kbd>→</kbd></dt><dd>Steer</dd>
+          <dt><kbd>W</kbd><kbd>S</kbd> <kbd>↑</kbd><kbd>↓</kbd></dt><dd>Sheet in / ease</dd>
+          <dt><kbd>T</kbd></dt><dd>Auto-trim</dd>
+          <dt><kbd>C</kbd></dt><dd>Camera view</dd>
+          <dt><kbd>1</kbd>–<kbd>4</kbd></dt><dd>Switch boat</dd>
+          <dt><kbd>R</kbd></dt><dd>Reset position</dd>
+          <dt><kbd>Space</kbd></dt><dd>Pause</dd>
+          <dt><kbd>M</kbd></dt><dd>Sound</dd>
+          <dt><kbd>H</kbd></dt><dd>Hide all panels</dd>
+          <dt><kbd>K</kbd></dt><dd>Hide this list</dd>
+          <dt>Drag · Scroll</dt><dd>Look · Zoom</dd>
+        </dl>
+      </section>
+      <button id="controls-show" class="glass">Controls <kbd>K</kbd></button>
     </div>
 
     <div id="intro">
@@ -53,7 +69,7 @@
         <ul>
           <li><kbd>A</kbd><kbd>D</kbd> or <kbd>←</kbd><kbd>→</kbd> steer</li>
           <li><kbd>W</kbd><kbd>S</kbd> sheet in / ease (auto-trim is on by default)</li>
-          <li><kbd>C</kbd> camera · <kbd>T</kbd> auto-trim · <kbd>R</kbd> reset · <kbd>H</kbd> hide panels</li>
+          <li><kbd>C</kbd> camera · <kbd>T</kbd> auto-trim · <kbd>R</kbd> reset · <kbd>K</kbd> show / hide controls</li>
           <li>Drag to look around, scroll to zoom</li>
         </ul>
         <button id="start" disabled>Cast off</button>

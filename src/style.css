@@ -67,7 +67,14 @@ input[type='range']::-webkit-slider-thumb { -webkit-appearance: none; width: 14p
   border: 1px solid var(--line); font-size: 12.5px; letter-spacing: 0.08em; opacity: 0; transition: opacity 0.35s; white-space: nowrap; }
 #toast.show { opacity: 1; }
 #toast.warn { border-color: var(--red); color: #ffd0cb; }
-#keys { position: absolute; left: 24px; top: 78px; font-size: 10.5px; color: var(--dim); letter-spacing: 0.06em; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6); }
+#controls { position: absolute; left: 20px; top: 70px; width: 236px; padding: 10px 14px 12px; }
+#controls header { display: flex; justify-content: space-between; align-items: center; font-size: 9.5px; letter-spacing: 0.2em; color: var(--dim); font-weight: 600; text-transform: uppercase; margin-bottom: 6px; }
+#controls header button { padding: 0 7px; line-height: 20px; font-size: 15px; border-radius: 7px; }
+#controls dl { display: grid; grid-template-columns: auto 1fr; gap: 5px 12px; margin: 0; font-size: 11.5px; align-items: center; }
+#controls dt { white-space: nowrap; color: var(--dim); }
+#controls dd { margin: 0; }
+#controls-show { position: absolute; left: 20px; top: 70px; padding: 6px 10px; font-size: 11px; letter-spacing: 0.08em; border-radius: 10px; }
+#hud.no-controls #controls, #hud:not(.no-controls) #controls-show { display: none; }
 
 #intro { position: fixed; inset: 0; display: grid; place-items: center; background: radial-gradient(1200px 700px at 50% 40%, #173247, #071019);
   transition: opacity 0.9s; z-index: 10; }
@@ -86,6 +93,9 @@ kbd { display: inline-block; min-width: 22px; padding: 1px 6px; margin: 0 2px; b
 
 @media (max-width: 900px) {
   #panel { width: 232px; }
-  #helm, #keys { display: none; }
+  #helm { display: none; }
+  #controls { width: 210px; }
   #minimap { width: 150px; height: 150px; }
 }
+
+@media (max-height: 640px) { #controls dl { font-size: 10.5px; gap: 3px 10px; } }

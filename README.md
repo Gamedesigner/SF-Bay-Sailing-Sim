@@ -25,7 +25,8 @@ Then open http://localhost:5173. `npm run dev:lan` serves it to other devices on
 | C | Cycle camera (chase, orbit, helm, drone) |
 | 1–4 | Switch boat |
 | R | Reset to last location |
-| H | Hide panels |
+| H | Hide all panels |
+| K | Show / hide the controls list |
 | M | Sound on/off |
 | Space | Pause |
 | Drag / scroll | Look around / zoom |

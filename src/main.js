@@ -139,6 +139,15 @@ const app = {
   toggleSound() { return sound.toggle(); },
 };
 
+// ---------- controls card (remembers whether you hid it) ----------
+function setControls(show) {
+  $('hud').classList.toggle('no-controls', !show);
+  try { localStorage.setItem('windward.controls', show ? '1' : '0'); } catch {}
+}
+try { if (localStorage.getItem('windward.controls') === '0') $('hud').classList.add('no-controls'); } catch {}
+$('controls-hide').onclick = () => setControls(false);
+$('controls-show').onclick = (e) => { setControls(true); e.target.blur(); };
+
 // ---------- input ----------
 window.addEventListener('keydown', (e) => {
   if (e.target.tagName === 'INPUT' && e.target.type !== 'range') return;
@@ -150,6 +159,7 @@ window.addEventListener('keydown', (e) => {
   if (e.code === 'KeyT') app.toggleAuto();
   if (e.code === 'KeyR') { const k = Object.keys(SPOTS).find((s) => SPOTS[s] === lastSpot); app.teleport(k); if (!k) ui.toast('Back to the start'); }
   if (e.code === 'KeyH') $('hud').classList.toggle('min');
+  if (e.code === 'KeyK' || e.code === 'Slash') setControls($('hud').classList.contains('no-controls'));
   if (e.code === 'KeyM') $('b-sound').click();
   if (e.code === 'Space') { state.paused = !state.paused; ui.toast(state.paused ? 'Paused' : 'Sailing'); }
   if (/^Digit[1-4]$/.test(e.code)) app.setBoat(+e.code.slice(5) - 1);
